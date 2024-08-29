@@ -6,9 +6,14 @@
     combos {
         compatible = "zmk,combos";
 
-        winkey {
-            bindings = <&kp LEFT_WIN>;
+        layer2 {
+            bindings = <&mo 2>;
             key-positions = <40 41>;
+        };
+
+        winkey {
+            bindings = <&kp LWIN>;
+            key-positions = <39 40>;
         };
     };
 
@@ -17,28 +22,28 @@
 
         main {
             bindings = <
-&kp ESC       &kp Q  &kp W  &kp E     &kp R      &kp T        &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB       &kp A  &kp S  &kp D     &kp F      &kp G        &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp RET
-&kp CAPSLOCK  &kp Z  &kp X  &kp C     &kp V      &kp B        &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp DEL
-                            &kp LALT  &kp LSHFT  &kp LCTRL    &kp SPACE  &to 1  &to 2
+&none  &kp Q  &kp W  &kp E     &kp R      &kp T        &kp Y      &kp U      &kp I      &kp O    &kp P     &none
+&none  &kp A  &kp S  &kp D     &kp F      &kp G        &kp H      &kp J      &kp K      &kp L    &kp SEMI  &none
+&none  &kp Z  &kp X  &kp C     &kp V      &kp B        &kp N      &kp M      &kp COMMA  &kp DOT  &kp FSLH  &none
+                     &kp LALT  &kp LSHFT  &kp LCTRL    &kp SPACE  &kp ENTER  &mo 1
             >;
         };
 
-        numbers {
+        numbers-and-navigation {
             bindings = <
-&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7     &kp N8     &kp N9    &kp N0    &trans
-&trans     &trans  &trans  &trans  &trans  &trans    &kp BSLH  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp SQT
-&trans     &trans  &trans  &trans  &trans  &trans    &trans    &trans     &trans     &trans    &trans    &trans
-                           &trans  &trans  &trans    &trans    &trans     &trans
+&none  &kp N1      &kp N2     &kp N3    &kp N4    &kp N5      &kp N6    &kp N7     &kp N8     &kp N9     &kp N0         &none
+&none  &kp DELETE  &kp CAPS   &kp TAB   &kp ESC   &none       &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp BACKSPACE  &none
+&none  &kp MINUS   &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none          &none
+                              &trans    &trans    &trans      &trans    &trans     &trans
             >;
         };
 
-        navigation {
+        media-and-speical {
             bindings = <
-&kp GRAVE   &kp N1        &kp N2        &kp N3  &kp N4  &kp N5    &kp N6    &kp N7     &kp N8     &kp N9     &kp N0  &trans
-&none       &trans        &trans        &trans  &trans  &trans    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &trans  &trans  &trans    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans  &trans
-                                        &trans  &trans  &trans    &trans    &trans     &trans
+&none  &none         &none              &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none              &none   &none   &none   &none  &none  &none
+&none  &kp C_MUTE    &kp C_VOLUME_DOWN  &kp C_VOLUME_UP       &kp C_PLAY_PAUSE      &kp PRINTSCREEN    &none   &none   &none   &none  &none  &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2          &bt BT_SEL 3          &bt BT_CLR         &none   &none   &none   &none  &none  &none
+                                        &trans                &trans                &trans             &trans  &trans  &trans
             >;
         };
     };
